@@ -1,0 +1,332 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  display: flex;
+  height: 125vh;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background: #137494;
+  font-family: "Poppins", sans-serif;
+}
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem 7%;
+  background-color: rgb(1, 1, 1, 0.8);
+  border-bottom: 1px solid #137494;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.navbar .navbar-logo img {
+  width: 3rem;
+}
+.navbar .navbar-logo {
+  top: 0;
+  color: #fff;
+  font-style: italic;
+  font-size: 1.6rem;
+  margin-left: 10px;
+}
+.navbar .navbar-nav button {
+  background-color: #137494;
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  height: 40px;
+  line-height: 20px;
+  list-style: none;
+  margin: 0.5rem;
+  outline: none;
+  padding: 4px 8px;
+  position: absolute;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  top: 1rem;
+  right: 1.3rem;
+}
+
+.navbar .navbar-nav button:hover,
+.navbar .navbar-nav button:focus {
+  background-color: #397f96;
+}
+
+.navbar .navbar-nav button:hover::after {
+  transform: scaleX(0.5);
+}
+
+.navbar .navbar-extra a {
+  color: white;
+  margin: 0 0.5rem;
+}
+
+.navbar .navbar-extra a:hover {
+  color: #fff;
+}
+
+#hamburger-menu {
+  display: none;
+}
+
+/* Konten */
+.container {
+  margin-top: 0;
+  max-width: 1200px;
+  width: 100%;
+  padding: 25px 30px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+.container .title {
+  font-size: 40px;
+  font-weight: 500;
+  margin-bottom: 0.1em;
+  margin-top: 0.4em;
+}
+.data {
+  display: flex;
+  font-size: 25px;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.data input {
+  width: 65%; /* Lebar input mengisi seluruh ruang yang tersedia */
+  box-sizing: border-box; /* Termasuk padding dan border dalam lebar input */
+  padding: 8px; /* Padding di sekitar teks input */
+  margin-top: 4px; /* Jarak atas dari label */
+  border: none;
+}
+.form {
+  flex: 1;
+  margin-right: 10px; /* Jarak antara form */
+}
+
+.form2 {
+  flex: 1;
+}
+
+.container form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 10px 0 12px 0;
+}
+form .form-group {
+  margin-bottom: 15px;
+  width: 40%;
+}
+form label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.form-group input,
+select {
+  height: 40px;
+  width: 100%;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid #fff;
+  padding-left: 15px;
+  font-size: 15px;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+.form-group .tanggal {
+  height: 40px;
+  width: 100%;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid #fff;
+  padding-left: 15px;
+  font-size: 15px;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+.form-group select {
+  height: 40px;
+  width: 100%;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding-left: 15px;
+  font-size: 15px;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+.form-group input:focus,
+.form-group input:valid,
+.form-group select:focus,
+.form-group select:valid {
+  border-color: aqua;
+}
+/* Memberikan warna pada border untuk input yang kosong */
+.form-group input:invalid,
+.form-group select:invalid {
+  border-color: red; /* Ganti dengan warna yang diinginkan untuk input kosong */
+}
+form .button {
+  height: 40px;
+  width: 100%;
+  margin: 40px 0;
+}
+form .button input {
+  width: 100%;
+  height: 100%;
+  outline: none;
+  cursor: pointer;
+  background: rgb(209, 82, 248);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  border-radius: 5px;
+}
+form .button input:hover {
+  background: rgb(167, 70, 197);
+}
+
+/* Tabel */
+.scrollable-table {
+  overflow-x: auto;
+  overflow-y: auto;
+}
+.scrollable-table table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow-x: auto;
+}
+
+.scrollable-table tbody {
+  width: 100%;
+  overflow: auto;
+  max-height: 200px;
+  display: block;
+}
+.scrollable-table th,
+.scrollable-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+  width: 15em;
+}
+.scrollable-table .td2 {
+  width: 42em;
+}
+.scrollable-table td input {
+  border-style: none;
+  font-size: 16px;
+}
+
+/* Media Queris */
+
+/* Laptop */
+@media (max-width: 1366px) {
+  html {
+    font-size: 75%;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 55%;
+  }
+  .container {
+    max-width: 100%;
+    margin-top: 0;
+  }
+  .data {
+    flex-direction: column; /* Mengubah tata letak menjadi kolom */
+  }
+  .form,
+  .form2 {
+    flex: auto; /* Mengisi lebar layar penuh */
+    margin-right: 0; /* Menghilangkan margin kanan */
+  }
+  .data input {
+    margin-top: 0; /* Menghilangkan jarak atas saat dalam mode responsif */
+  }
+  form .form-group {
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  .container form {
+    max-height: 400px;
+    overflow-y: scroll;
+  }
+  .container form::-webkit-scrollbar {
+    width: 0;
+  }
+  form .button {
+    margin: 20px 0;
+  }
+
+  /* Navbar */
+  #hamburger-menu {
+    display: inline-block;
+  }
+  .navbar .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: #fff;
+    width: 30rem;
+    height: 100vh;
+  }
+
+  .navbar .navbar-nav.active {
+    right: 0;
+  }
+
+  .navbar .navbar-nav a {
+    color: black;
+    display: block;
+    margin: 1.5rem;
+    padding: 0.5rem;
+    font-size: 2rem;
+  }
+
+  .navbar .navbar-nav a::after {
+    transform-origin: 0 0;
+  }
+
+  .navbar .navbar-nav a:hover::after {
+    transform: scaleX(0.2);
+  }
+
+  /* Tabel */
+  .scrollable-table tbody {
+    width: auto;
+  }
+}
+/* Phone */
+@media (max-width: 450px) {
+  html {
+    font-size: 55%;
+  }
+}

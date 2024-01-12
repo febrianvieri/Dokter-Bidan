@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dokter</title>
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Navbar Start -->
+    <nav class="navbar">
+      <a href="#" class="navbar-logo"
+        ><img src="../img/logo.png" alt="" />Klinik Pratama Wiwied Asari</a
+      >
+      <div class="navbar-nav">
+        <button id="logoutButton" type="button">Logout</button>
+      </div>
+
+      <div class="navbar-extra">
+        <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
+      </div>
+    </nav>
+    <!-- Navbar end -->
+
+    <div class="container">
+      <div class="title">Riwayat Pasien</div>
+      <br />
+
+      <div class="data">
+        <div class="form">
+          <label for="nama">Nama Pasien :</label>
+          <input type="text" readonly />
+        </div>
+
+        <div class="form2">
+          <label>No. Antrian :</label>
+          <input class="nomor" readonly type="number" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <table class="scrollable-table table">
+          <tbody>
+            <tr>
+              <td>Tanggal Check-up</td>
+              <td>Riwayat penyakit</td>
+            </tr>
+            <tr>
+              <td><input type="text" readonly /></td>
+              <td class="td2"><input type="text" readonly /></td>
+            </tr>
+            <tr>
+              <td><input type="text" readonly /></td>
+              <td class="td2"><input type="text" readonly /></td>
+            </tr>
+            <tr>
+              <td><input type="text" readonly /></td>
+              <td class="td2"><input type="text" readonly /></td>
+            </tr>
+            <tr>
+              <td><input type="text" readonly /></td>
+              <td class="td2"><input type="text" readonly /></td>
+            </tr>
+            <tr>
+              <td><input type="text" readonly /></td>
+              <td class="td2"><input type="text" readonly /></td>
+            </tr>
+            <tr>
+              <td><input type="text" readonly /></td>
+              <td class="td2"><input type="text" readonly /></td>
+            </tr>
+            <tr>
+              <td><input type="text" readonly /></td>
+              <td class="td2"><input type="text" readonly /></td>
+            </tr>
+            <tr>
+              <td><input type="text" readonly /></td>
+              <td class="td2"><input type="text" readonly /></td>
+            </tr>
+            <tr>
+              <td><input type="text" readonly /></td>
+              <td class="td2"><input type="text" readonly /></td>
+            </tr>
+            <tr>
+              <td><input type="text" readonly /></td>
+              <td class="td2"><input type="text" readonly /></td>
+            </tr>
+            <!-- Hanya menampilkan 5 baris, tapi dapat di-scroll -->
+          </tbody>
+        </table>
+      </div>
+
+      <form action="" autocomplete="off">
+        <div class="form-group">
+          <label for="rujukan">Rujukan</label>
+          <select
+            oninvalid="this.setCustomValidity('Ini harus diisi!')"
+            oninput="this.setCustomValidity('')"
+          >
+            <option value="" disabled selected>Rujukan</option>
+            <option value="dokter">Labolatorium</option>
+            <option value="bidan">Rumah Sakit</option>
+            <option value="null">-</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="nama"
+            >Diagnosa (<span style="color: red">*</span>wajib diisi)</label
+          >
+          <input
+            type="search"
+            placeholder="Cari Diagnosa"
+            required
+            oninvalid="this.setCustomValidity('Ini harus diisi!')"
+            oninput="this.setCustomValidity('')"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="nama">Obat</label>
+          <input
+            type="search"
+            placeholder="Cari Obat"
+            oninvalid="this.setCustomValidity('Ini harus diisi!')"
+            oninput="this.setCustomValidity('')"
+          />
+        </div>
+
+        <div class="button">
+          <input type="submit" value="Submit" />
+        </div>
+      </form>
+    </div>
+
+    <!-- Script -->
+    <!-- Icons -->
+    <script>
+      feather.replace();
+    </script>
+
+    <!-- Hamburger -->
+    <script>
+      <!-- Hamburger Navbar -->
+      // Toggle class active
+      const navbarNav = document.querySelector(".navbar-nav");
+      // Hamburger menu di clik
+      document.querySelector("#hamburger-menu").onclick = () => {
+        navbarNav.classList.toggle("active");
+      };
+
+      // klik di luar sidebar
+      const hamburger = document.querySelector("#hamburger-menu");
+
+      document.addEventListener("click", function (e) {
+        if (!hamburger.contains(e.target) && !navbarNav.contains(e.target)) {
+          navbarNav.classList.remove("active");
+        }
+      });
+    </script>
+  </body>
+</html>
